@@ -1,0 +1,114 @@
+.login {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: var(--font-size-content);
+	font-weight: var(--font-weight-regular);
+	transition: all 0.3s ease-in-out;
+
+	&__wrapper {
+		display: flex;
+		// width: min(900px, 46.875vw);
+		// height: min(620px, 32.292vw);
+		width: 900px;
+		height: 620px;
+		padding: 15px;
+		border-radius: var(--border-radius-lg);
+		background-color: var(--color-light);
+		box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+	}
+}
+
+.info {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 40%;
+		padding: 25px;
+		border-radius: var(--border-radius-lg);
+		background-color: var(--color-blue);
+		color: var(--color-light);
+		cursor: default;
+	}
+
+	&__title {
+		font-size: var(--font-size-h1);
+		font-weight: var(--font-weight-semibold);
+		padding-bottom: 75px;
+	}
+
+	&__subtitle {
+		font-size: var(--font-size-subtitle);
+		padding-bottom: 50px;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	&__item {
+		padding: 5px 15px;
+		font-weight: var(--font-weight-thin);
+		background-color: var(--color-dark-blue);
+		border-radius: var(--border-radius-m);
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 60%;
+	padding-inline: 35px;
+
+	&__title {
+		font-size: var(--font-size-h2);
+		padding-bottom: 50px;
+	}
+
+	&__input-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__input-label {
+		color: var(--color-gray);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	&__input {
+		height: 45px;
+		border-radius: var(--border-radius-m);
+		border: 1px solid var(--color-gray);
+		padding-inline: 15px;
+	}
+
+	&__error {
+		color: var(--color-red);
+		font-weight: var(--font-weight-regular);
+	}
+
+	&__submit-button {
+		display: flex;
+		background-color: var(--color-blue);
+		color: var(--color-light);
+		border-radius: var(--border-radius-m);
+		padding: 15px 30px;
+		margin-top: 35px;
+		border: none;
+		transition: all 0.15s ease-in-out;
+
+		&:hover {
+			background-color: var(--color-dark-blue);
+		}
+
+		&:active {
+			background-color: var(--color-blue);
+		}
+	}
+}
