@@ -7,6 +7,7 @@
 	font-size: var(--font-size-content);
 	font-weight: var(--font-weight-regular);
 	transition: all 0.3s ease-in-out;
+	padding-inline: min(2vw, 40px);
 
 	&__wrapper {
 		display: flex;
@@ -33,28 +34,6 @@
 		padding-bottom: 50px;
 	}
 
-	&__input-wrapper {
-		display: flex;
-		flex-direction: column;
-	}
-
-	&__input-label {
-		color: var(--color-gray);
-		font-weight: var(--font-weight-semibold);
-	}
-
-	&__input {
-		height: 45px;
-		border-radius: var(--border-radius-m);
-		border: 1px solid var(--color-gray);
-		padding-inline: 15px;
-	}
-
-	&__error {
-		color: var(--color-red);
-		font-weight: var(--font-weight-regular);
-	}
-
 	&__submit-button {
 		display: flex;
 		background-color: var(--color-blue);
@@ -71,6 +50,10 @@
 
 		&:active {
 			background-color: var(--color-blue);
+		}
+
+		&:disabled {
+			background-color: var(--color-gray);
 		}
 	}
 }

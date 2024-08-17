@@ -1,22 +1,30 @@
 import './Input.scss';
 import { capitalizeWord } from '../../utils';
 
-const Input = ({ type, name = null, label = null, onChange, value }) => {
+export const Input = ({
+	type,
+	name,
+	label = null,
+	onChange,
+	onBlur,
+	value,
+	errorMessage,
+}) => {
 	return (
-		<div className="form__input-wrapper">
-			<label className="form__input-label" htmlFor={name || type}>
-				{label || capitalizeWord(type)}
+		<div className={errorMessage ? 'input__wrapper--has-error' : 'input__wrapper'}>
+			<label className="input__label" htmlFor={name}>
+				{label || capitalizeWord(name)}
 			</label>
 			<input
-				className="form__input"
+				className={errorMessage ? 'input--has-error' : 'input'}
 				type={type}
-				name={name || type}
+				id={name}
 				onChange={onChange}
+				onBlur={onBlur}
 				value={value}
+				autoComplete="off"
 			/>
-			<p className="form__error">Error Message</p>
+			{errorMessage && <p className="input__error">{errorMessage}</p>}
 		</div>
 	);
 };
-
-export default Input;
