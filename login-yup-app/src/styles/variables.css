@@ -1,0 +1,23 @@
+* {
+	--color-app-bg: #d9dde8;
+	--color-light: #ffffff;
+	--color-gray: #748392;
+	--color-dark: #000000;
+	--color-blue: #3b37ff;
+	--color-blue-bg: #f5f5fd;
+	--color-dark-blue: #2420e2;
+	--color-red: #fb0000;
+	--color-red-bg: #fff9f9;
+
+	--font-size-h1: 35px;
+	--font-size-h2: 30px;
+	--font-size-subtitle: 20px;
+	--font-size-content: 15px;
+
+	--font-weight-thin: 300;
+	--font-weight-regular: 400;
+	--font-weight-semibold: 600;
+
+	--border-radius-m: 8px;
+	--border-radius-lg: 20px;
+}
