@@ -1,28 +1,24 @@
 import './styles/App.scss';
-// import { useState, useEffect, useRef } from 'react';
-import { useState, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Input, Info } from './components';
 import { EMPTY_FORM_DATA, FORM_SCHEME } from './constants';
 
 function App() {
-	// USE STATE
-	const [hasError, setHasError] = useState(false);
-
 	// USE FORM
 	const {
 		register,
 		handleSubmit,
 		reset,
-		formState: { errors },
+		formState: { errors, isValid },
 	} = useForm({
 		defaultValues: EMPTY_FORM_DATA,
 		resolver: yupResolver(FORM_SCHEME),
 	});
 
-	// USE REF //-- DOESN'T WORK --//
-	// const submitButtonRef = useRef(null);
+	// USE REF
+	const submitButtonRef = useRef(null);
 
 	// ERRORS
 	const emailError = errors.email?.message;
@@ -31,13 +27,10 @@ function App() {
 
 	// BUTTON GREY EFFECT
 	useEffect(() => {
-		let newHasError = false;
-
-		if (emailError || passwordError || rePasswordError) {
-			newHasError = true;
+		if (isValid) {
+			submitButtonRef.current.focus();
 		}
-		setHasError(newHasError);
-	}, [emailError, passwordError, rePasswordError]);
+	}, [isValid]);
 
 	// SUBMIT
 	const onSubmit = (formData) => {
@@ -74,8 +67,8 @@ function App() {
 						<button
 							className="form__submit-button"
 							type="submit"
-							// ref={submitButtonRef}
-							disabled={hasError}
+							ref={submitButtonRef}
+							disabled={!isValid}
 						>
 							Create account
 						</button>

@@ -3,7 +3,7 @@ import './Info.scss';
 // const TECH_DATA = ['React.js', 'useState()', 'useRef()', 'useEffect()', '+'];
 const TECH_DATA_YUP = [
 	'React.js',
-	'useState()',
+	// 'useState()',
 	'useRef()',
 	'useEffect()',
 	'React Hook Form',
