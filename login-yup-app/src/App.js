@@ -1,9 +1,9 @@
-import './styles/App.scss';
-import { useEffect, useRef } from 'react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Input, Info } from './components';
-import { EMPTY_FORM_DATA, FORM_SCHEME } from './constants';
+import "./styles/App.scss";
+import { useEffect, useRef } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Input, Info } from "./components";
+import { EMPTY_FORM_DATA, FORM_SCHEME } from "./constants";
 
 function App() {
 	// USE FORM
@@ -45,22 +45,22 @@ function App() {
 				<form className="form" onSubmit={handleSubmit(onSubmit)}>
 					<h2 className="form__title">Sign up</h2>
 					<Input
+						register={register}
 						type="email"
 						name="email"
-						register={register}
 						errorMessage={emailError}
 					/>
 					<Input
+						register={register}
 						type="password"
 						name="password"
-						register={register}
 						errorMessage={passwordError}
 					/>
 					<Input
+						register={register}
 						type="password"
 						name="rePassword"
 						label="Re-enter password"
-						register={register}
 						errorMessage={rePasswordError}
 					/>
 					<span>
